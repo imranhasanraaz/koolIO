@@ -1,5 +1,5 @@
 {
   "username": " Paykoolio",
-  "password": "123Abc!@"
-
+  "password": "123Abc!@",
+  "audioPath" : "src/test/resources/sample.wav"
 }

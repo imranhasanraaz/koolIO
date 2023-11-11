@@ -17,12 +17,15 @@ public class TestKoolio extends BaseTest{
         loginPage.setUsername(testdata.getValue("/username").toString());
         loginPage.setPassword(testdata.getValue("/password").toString());
         loginPage.setLogin();
-        Thread.sleep(5000);
-
         DashBoardPage dashboard = new DashBoardPage();
-      Assert.assertTrue(dashboard.waitForDisplayed(), "Dashboard is not open");
+        Assert.assertTrue(dashboard.waitForDisplayed(), "Dashboard is not open");
         logger.info("Login Successful");
         dashboard.setNewProjectButton();
+        dashboard.clickedOnUpload(testdata.getValue("/audioPath").toString());
+        logger.info("Accept transcription Alert");
+        dashboard.clickedOnYes();
+        logger.info("Accept One Speaker Alert");
+        dashboard.clickedOnYes();
         Thread.sleep(5000);
     }
 }

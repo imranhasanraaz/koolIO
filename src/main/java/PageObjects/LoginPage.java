@@ -11,7 +11,7 @@ public class LoginPage extends BaseForm {
     }
     private final ITextBox username = getElementFactory().getTextBox(By.xpath("//form[@id=\"login-form\"]//input[@placeholder=\"User name or Email\"]"),"Username");
     private final ITextBox password = getElementFactory().getTextBox(By.id("lfpwd"),"Password");
-    private final IButton login = getElementFactory().getButton(By.xpath("//button[@class='line-height-input btn-padding text-l auth-button login-button']"), "Login");
+    private final IButton login = getElementFactory().getButton(By.cssSelector(".line-height-input.btn-padding.text-l.auth-button.login-button"), "Login");
 
 
     public void setUsername(String value){
@@ -22,7 +22,7 @@ public class LoginPage extends BaseForm {
         password.clearAndType(value);
     }
     public void setLogin(){
-        login.click();
+        login.getJsActions().clickAndWait();
     }
 
 
